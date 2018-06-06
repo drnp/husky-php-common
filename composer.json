@@ -1,0 +1,15 @@
+{
+    "name": "np/husky-php-common",
+    "description": "Common service of husky",
+    "type": "project",
+    "require": {
+        "php": ">=7.0"
+    },
+    "license": "BSD 3-Clause",
+    "authors": [
+        {
+            "name": "Dr.NP",
+            "email": "conan.np@gmail.com"
+        }
+    ]
+}
