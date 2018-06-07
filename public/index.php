@@ -54,9 +54,22 @@ $app = require \BASE_PATH . '/runtime/bootstrap.php';
 
 // Load routes
 require __DIR__ . '/../app/routes/Index.route.php';
+require __DIR__ . '/../app/routes/User.route.php';
+require __DIR__ . '/../app/routes/App.route.php';
 
 // Logics;
-$app->get('/', \Husky\Common\Routes\Index::class . ':index')->setName('Index');
+//$app->get('/', \Husky\Common\Routes\Index::class . ':index')->setName('Index');
+//$app->get('/settings', \Husky\Common\Routes\Index::class . ':settings')->setName('Settings');
+$app->get('/_auth', \Husky\Common\Routes\User::class . ':auth')->setName('UserAuth');
+$app->get('/_reg', \Husky\Common\Routes\User::class . ':reg')->setName('UserReg');
+$app->get('/_code', \Husky\Common\Routes\User::class . ':code')->setName('UserQrCode');
+$app->get('/_token', \Husky\Common\Routes\User::class . ':token')->setName('UserToken');
+
+$app->get('/users/{id}', \Husky\Common\Routes\User::class . ':info')->setName('GetUserInfo');
+$app->get('/apps/{id}', \Husky\Common\Routes\App::class . ':info')->setName('GetAppInfo');
+$app->put('/apps/{id}', \Husky\Common\Routes\App::class . ':update')->setName('UpdateAppInfo');
+$app->patch('/apps/{id}', \Husky\Common\Routes\App::class . ':modify')->setName('ModifyAppInfo');
+$app->post('/apps', \Husky\Common\Routes\App::class . ':create')->setName('CreateAppInfo');
 
 $app->run();
 

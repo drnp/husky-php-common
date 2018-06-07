@@ -63,11 +63,23 @@ class Index
     public function index(Request $request, Response $response)
     {
         $this->container['result'] = 'Hello husky';
+
+        return $response;
+    }
+
+/* }}} */
+
+/* {{{ [Index::settings] */
+    public function settings(Request $request, Response $response)
+    {
+        $this->container['result'] = \get_object_vars($this->container->get('settings'));
+
         return $response;
     }
 
 /* }}} */
 }
+
 /*
  * Local variables:
  * tab-width: 4
