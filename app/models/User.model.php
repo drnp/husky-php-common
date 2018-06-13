@@ -1,6 +1,6 @@
 <?php
 /*
- * app/routes/Index.route.php
+ * app/models/User.model.php
  *
  * Copyright (C) 2018 Dr.NP <np@bsgroup.org>
  *
@@ -30,44 +30,22 @@
  */
 
 /**
- * @file app/routes/Index.route.php
+ * @file app/models/User.model.php
  * @package Husky/php/common
  * @author Dr.NP <np@bsgroup.org>
- * @since 06/05/2018
+ * @since 06/13/2018
  * @version 0.0.1
  */
 
-namespace Husky\Common\Routes;
-
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
+namespace Husky\Common\Models;
 
 if (!\defined('IN_HUSKY') || !$app)
 {
     die('Inject denied');
 }
 
-class Index
+class User
 {
-    private $container = null;
-
-/* {{{ [__construct] */
-    function __construct($container)
-    {
-        $this->container = $container;
-    }
-
-/* }}} */
-
-/* {{{ [Index::index] */
-    public function index(Request $request, Response $response)
-    {
-        $this->container['result'] = 'Hello Husky';
-
-        return $response;
-    }
-
-/* }}} */
 
 }
 

@@ -58,8 +58,8 @@ require __DIR__ . '/../app/routes/User.route.php';
 require __DIR__ . '/../app/routes/App.route.php';
 
 // Logics;
-//$app->get('/', \Husky\Common\Routes\Index::class . ':index')->setName('Index');
-//$app->get('/settings', \Husky\Common\Routes\Index::class . ':settings')->setName('Settings');
+$app->get('/', \Husky\Common\Routes\Index::class . ':index')->setName('Index');
+
 $app->get('/_auth', \Husky\Common\Routes\User::class . ':auth')->setName('UserAuth');
 $app->get('/_reg', \Husky\Common\Routes\User::class . ':reg')->setName('UserReg');
 $app->get('/_code', \Husky\Common\Routes\User::class . ':code')->setName('UserQrCode');

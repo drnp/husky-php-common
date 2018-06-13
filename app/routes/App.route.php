@@ -1,6 +1,6 @@
 <?php
 /*
- * app/routes/Index.route.php
+ * app/routes/App.route.php
  *
  * Copyright (C) 2018 Dr.NP <np@bsgroup.org>
  *
@@ -30,10 +30,10 @@
  */
 
 /**
- * @file app/routes/Index.route.php
+ * @file app/routes/App.route.php
  * @package Husky/php/common
  * @author Dr.NP <np@bsgroup.org>
- * @since 06/05/2018
+ * @since 06/13/2018
  * @version 0.0.1
  */
 
@@ -47,7 +47,9 @@ if (!\defined('IN_HUSKY') || !$app)
     die('Inject denied');
 }
 
-class Index
+require __DIR__ . '/../models/App.model.php';
+
+class App
 {
     private $container = null;
 
@@ -59,11 +61,33 @@ class Index
 
 /* }}} */
 
-/* {{{ [Index::index] */
-    public function index(Request $request, Response $response)
+/* {{{ [App::info] */
+    public function info(Request $request, Response $response)
     {
-        $this->container['result'] = 'Hello Husky';
+        return $response;
+    }
 
+/* }}} */
+
+/* {{{ [App::update] */
+    public function update(Request $request, Response $response)
+    {
+        return $response;
+    }
+
+/* }}} */
+
+/* {{{ [App::modify] */
+    public function modify(Request $request, Response $response)
+    {
+        return $response;
+    }
+
+/* }}} */
+
+/* {{{ [App::create] */
+    public function create(Request $request, Response $response)
+    {
         return $response;
     }
 
